@@ -48,7 +48,6 @@ Chi-squared and fisher exact tests are used.
 
 ## Graphical Summary
 
-
 ### barchart
 
 ```{r}
@@ -58,3 +57,14 @@ barchartGC(~race + eatout,data=mydata, type="percent")
 ```
 
 From analyzing the charts, each race does go out to eat more often than those that do not. The white race has the highest yes amount. The percentages are higher for eating out for each race.
+
+
+## Numerical Summary
+
+```{r}
+table1 <- xtabs(~race + eatout, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
+
+The table shows that the white race goes out to eat the most out of the samples.
