@@ -44,8 +44,6 @@ Chi-squared and fisher exact tests are used.
 
 # Descriptive summaries
 
-
-
 ## Graphical Summary
 
 ### barchart
@@ -68,3 +66,25 @@ colPerc(table1)
 ```
 
 The table shows that the white race goes out to eat the most out of the samples.
+
+## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+Chi-squared test shows that the p-value is 0.000002287 which is less than 0.05. Null hypothesis is rejected in favor of the alternative.
+
+
+```{r}
+fisherXY(mydata$race,mydata$eatout, printAll = TRUE)
+```
+
+There is a difference between white and other, white and black. The p-value is less than 0.05 for both of these comparisons.
+Black and other are similar due to the p-value being greater than 0.05.
+
+
+# Summary
+Does race have to do with the amount of eating out? Yes it does in comparison with white and others and also white with black. From the analysis shown here, white tends to be the one that eats out more than the rest. The p-values from the fisher test for the white comparisons is less than 0.05. The null hypothesis is rejected in favor of the alternative. There is no differnece between black and others eating out. 
