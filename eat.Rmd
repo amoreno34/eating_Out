@@ -46,8 +46,15 @@ Chi-squared and fisher exact tests are used.
 
 
 
-# Graphical Summary
+## Graphical Summary
 
 
+### barchart
 
+```{r}
+barchartGC(~race + eatout,data=mydata)
+barchartGC(~race + eatout,data=mydata, type="percent")
 
+```
+
+From analyzing the charts, each race does go out to eat more often than those that do not. The white race has the highest yes amount. The percentages are higher for eating out for each race.
